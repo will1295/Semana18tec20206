@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Carrito de compras</h1>
+    <ul>
+        {%for id,item in carrito.items%}
+        <li>{{item.nombre}} x {{item.cantidad}}</li>
+        {%empty%}
+        <li>El carrito esta vacio</li>
+        {%endfor%}
+    </ul>
+    <p>Total: ${{total}}</p>
+</body>
+<a href="{% url 'agregar' 1 'Teclado' '25.00'%}">Agregar producto</a>
+<a href="{%url 'vaciar'%}">Vaciar carrito</a>
+
+</html>
